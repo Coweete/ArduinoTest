@@ -106,7 +106,7 @@ public class SebbeTest implements SerialPortEventListener{
                 System.out.println("sending to arduino= " + got);
                 try {
                     //send the string bytes to arduino
-                    output.write((got+"\n").getBytes());
+                    output.write((got+" hello \n").getBytes());
                     output.flush();
                 } catch (IOException e) {
                     System.out.println("Faild to send string to arduino");
@@ -139,7 +139,7 @@ public class SebbeTest implements SerialPortEventListener{
             if (oEvent.getEventType() == SerialPortEvent.DATA_AVAILABLE) {
                 try {
                     String inputLine = input.readLine();
-                    System.out.println(inputLine);
+                    System.out.println(inputLine +" some");
                 } catch (Exception e) {
                     System.err.println(e.toString());
                 }
